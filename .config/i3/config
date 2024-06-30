@@ -23,6 +23,15 @@ font pango:monospace 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+
+#Customize monitor layout
+exec_always bash ~/.config/i3/xrandr.sh
+exec_always bash ~/.config/i3/monitorswitch.sh
+
+
+
+
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -184,6 +193,14 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+#set workspaces to window
+workspace $ws9 output DP-0
+workspace $ws8 output HDMI-0
+workspace $ws7 output DP-2
+workspace 1 output Virtual-Left DP-4
+workspace 2 output VIrtual-Right DP-4
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
