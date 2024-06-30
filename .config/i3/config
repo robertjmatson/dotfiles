@@ -26,7 +26,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 #Customize monitor layout
 exec_always bash ~/.config/i3/xrandr.sh
-exec_always bash ~/.config/i3/monitorswitch.sh
+exec_always bash ~/.config/i3/monitorswitch.sh work
 
 
 
@@ -135,6 +135,17 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+#additional workspaces
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "Audio"
+set $ws20 "Discord"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -147,6 +158,17 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+# switch to additional workspace
+bindsym $mod+Control+1 workspace number $ws11
+bindsym $mod+Control+2 workspace number $ws12
+bindsym $mod+Control+3 workspace number $ws13
+bindsym $mod+Control+4 workspace number $ws14
+bindsym $mod+Control+5 workspace number $ws15
+bindsym $mod+Control+6 workspace number $ws16
+bindsym $mod+Control+7 workspace number $ws17
+bindsym $mod+Control+8 workspace number $ws18
+bindsym $mod+Control+9 workspace number $ws19
+bindsym $mod+Control+0 workspace number $ws20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -159,6 +181,17 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+# move focused container to workspace
+bindsym $mod+Shift+Control+1 move container to workspace number $ws11
+bindsym $mod+Shift+Control+2 move container to workspace number $ws12
+bindsym $mod+Shift+Control+3 move container to workspace number $ws13
+bindsym $mod+Shift+Control+4 move container to workspace number $ws14
+bindsym $mod+Shift+Control+5 move container to workspace number 15 $ws15
+bindsym $mod+Shift+Control+6 move container to workspace number 16 $ws16
+bindsym $mod+Shift+Control+7 move container to workspace number 17 $ws17
+bindsym $mod+Shift+Control+8 move container to workspace number 18 $ws18
+bindsym $mod+Shift+Control+9 move container to workspace number 19 $ws19
+bindsym $mod+Shift+Control+0 move container to workspace number 20 $ws20
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -195,11 +228,20 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #set workspaces to window
-workspace $ws9 output DP-0
-workspace $ws8 output HDMI-0
-workspace $ws7 output DP-2
+workspace $ws15 output DP-0
+workspace $ws17 output DP-0
+workspace $ws10 output HDMI-0
+workspace $ws20 output DP-2
+workspace $ws19 output DP-2
+workspace $ws18 output DP-2
 workspace 1 output Virtual-Left DP-4
 workspace 2 output VIrtual-Right DP-4
+
+assign [title="^Discord$"] 20
+assign [title="^pavucontroll$"] 19
+
+exec --no-startup-id flatpak run com.discordapp.Discord
+
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status

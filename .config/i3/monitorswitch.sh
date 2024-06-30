@@ -14,7 +14,7 @@ elif [ $mode = "work" ]; then
 	if xrandr --listactivemonitors | grep 'Virtual-Left' ; then
 		echo "Virtual-Left already created"
 	else
-		xrandr --setmonitor Virtual-Left 2560/596x1440/340+1080+1080 DP-4 --primary
+		xrandr --setmonitor Virtual-Left 2560/596x1440/340+1080+1080 DP-4
 	fi
 	if xrandr --listactivemonitors | grep 'Virtual-Right' ; then
 		echo "Virtual-Right already created"
