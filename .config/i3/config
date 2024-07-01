@@ -186,12 +186,12 @@ bindsym $mod+Shift+Control+1 move container to workspace number $ws11
 bindsym $mod+Shift+Control+2 move container to workspace number $ws12
 bindsym $mod+Shift+Control+3 move container to workspace number $ws13
 bindsym $mod+Shift+Control+4 move container to workspace number $ws14
-bindsym $mod+Shift+Control+5 move container to workspace number 15 $ws15
-bindsym $mod+Shift+Control+6 move container to workspace number 16 $ws16
-bindsym $mod+Shift+Control+7 move container to workspace number 17 $ws17
-bindsym $mod+Shift+Control+8 move container to workspace number 18 $ws18
-bindsym $mod+Shift+Control+9 move container to workspace number 19 $ws19
-bindsym $mod+Shift+Control+0 move container to workspace number 20 $ws20
+bindsym $mod+Shift+Control+5 move container to workspace number $ws15
+bindsym $mod+Shift+Control+6 move container to workspace number $ws16
+bindsym $mod+Shift+Control+7 move container to workspace number $ws17
+bindsym $mod+Shift+Control+8 move container to workspace number $ws18
+bindsym $mod+Shift+Control+9 move container to workspace number $ws19
+bindsym $mod+Shift+Control+0 move container to workspace number $ws20
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -227,21 +227,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-#set workspaces to window
-workspace $ws15 output DP-0
-workspace $ws17 output DP-0
-workspace $ws10 output HDMI-0
-workspace $ws20 output DP-2
-workspace $ws19 output DP-2
-workspace $ws18 output DP-2
-workspace 1 output Virtual-Left DP-4
-workspace 2 output VIrtual-Right DP-4
-
-assign [title="^Discord$"] 20
-assign [title="^pavucontroll$"] 19
-
-exec --no-startup-id flatpak run com.discordapp.Discord
-
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -249,3 +234,6 @@ exec --no-startup-id flatpak run com.discordapp.Discord
 bar {
         status_command i3status
 }
+
+#include ~/.config/i3/workspaces.conf
+include ~/.config/i3/config.d/*conf
