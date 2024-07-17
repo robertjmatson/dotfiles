@@ -118,3 +118,4 @@ fi
 
 export VISUAL=nvim;
 export EDITOR=nvim;
+source ~/.bash_completion/alacritty
