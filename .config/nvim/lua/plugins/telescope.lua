@@ -1,10 +1,21 @@
 return {
 	'nvim-telescope/telescope.nvim', 
 	tag = '0.1.8',
-	dependencies = { 'nvim-lua/plenary.nvim' },
+	dependencies = {
+		'nvim-lua/plenary.nvim',
+		--"debugloop/telescope-undo.nvim",
+	},
     	config = function()
-        	require("telescope").setup()
-
+        	require("telescope").setup({
+      			-- the rest of your telescope config goes here
+      			extensions = {
+        			--undo = {},
+        			-- other extensions:
+        			-- file_browser = { ... }
+      			},
+    		})
+		--require("telescope").load_extension("undo")
+    		--vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
         	-- set keymaps
         	local keymap = vim.keymap
 		local builtin = require('telescope.builtin')
@@ -18,5 +29,7 @@ return {
 		keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
 		keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = "[S]earch Recent Files (. for repeat)" })
 		keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+
+
 	end,
 }
