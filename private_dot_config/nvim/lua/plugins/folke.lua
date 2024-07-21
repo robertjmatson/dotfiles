@@ -1,22 +1,13 @@
 return {
 	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
-		keys = {
-			{
-				"<leader>h",
-				function()
-					require("which-key").show({ global = false })
-				end,
-				desc = "Harpoon",
-			},
-		},
-	},
+  "folke/which-key.nvim",
+  opts = {
+    spec = {
+      { "<BS>", desc = "Decrement Selection", mode = "x" },
+      { "<c-space>", desc = "Increment Selection", mode = { "x", "n" } },
+    },
+  },
+},
 	{
 		"folke/todo-comments.nvim",
 		event = "VimEnter",
