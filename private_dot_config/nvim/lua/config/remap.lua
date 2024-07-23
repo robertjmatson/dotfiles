@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Ex[p]lorer" })
+vim.keymap.set("n", "<leader>pe", vim.cmd.Ex, { desc = "[P]roject [E]xplorer" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
@@ -58,6 +58,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>y", '"+y')
-vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>Y", '"+Y')
+--vim.keymap.set("n", "<leader>y", '"+y')
+--vim.keymap.set("v", "<leader>y", '"+y')
+--vim.keymap.set("n", "<leader>Y", '"+Y')
