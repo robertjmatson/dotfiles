@@ -9,6 +9,7 @@
 	helper = !/usr/bin/gh auth git-credential
 [safe]
 	directory = /home/robert/dev/tools/dokuwiki
+	directory = /home/robert/dev/tools/homepage
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
