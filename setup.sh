@@ -14,6 +14,8 @@ case $distro in
 		chezmoi init --apply robertjmatson
 		timedatectl set-timezone America/Chicago
 		git clone https://github.com/vivien/i3blocks-contrib.git ~/.config/i3blocks/scripts	
+		tmux new-session -d
+		tmux source ~/.config/tmux/tmux.conf
 		;;
 	*)
 		echo "other"
