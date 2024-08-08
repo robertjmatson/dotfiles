@@ -12,6 +12,8 @@ case $distro in
 		sudo systemctl enable bluetooth.service
 		sudo systemctl start bluetooth.service
 		chezmoi init --apply robertjmatson
+		mkdir ~/.config/alacritty/themes
+		git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 		timedatectl set-timezone America/Chicago
 		git clone https://github.com/vivien/i3blocks-contrib.git ~/.config/i3blocks/scripts	
 		tmux new-session -d

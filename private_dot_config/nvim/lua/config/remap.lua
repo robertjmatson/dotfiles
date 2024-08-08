@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pe", vim.cmd.Ex, { desc = "[P]roject [E]xplorer" })
+--replaced with ranger
+--vim.keymap.set("n", "<leader>pe", vim.cmd.Ex, { desc = "[P]roject [E]xplorer" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
