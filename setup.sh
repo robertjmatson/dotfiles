@@ -7,6 +7,7 @@ case $distro in
 		sudo pacman -S nfs-utils samba net-tools keepassxc 
 		sudo pacman -S git lazygit github-cli 
 		sudo pacman -S bluez bluez-utils
+		sudo pacman -S ttf-jetbrains-mono-nerd bash
 		sudo pacman -S chezmoi alacritty neovim lua51 luarocks ranger tmux
 		sudo pacman -S discord firefox steam
 		sudo systemctl enable bluetooth.service
