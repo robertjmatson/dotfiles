@@ -9,7 +9,7 @@ case $distro in
 		sudo pacman -S bluez bluez-utils
 		sudo pacman -S ttf-jetbrains-mono-nerd bash
 		sudo pacman -S chezmoi alacritty neovim lua51 luarocks ranger tmux
-		sudo pacman -S discord firefox steam
+		sudo pacman -S discord firefox steam nextcloud-client
 		sudo systemctl enable bluetooth.service
 		sudo systemctl start bluetooth.service
 		chezmoi init --apply robertjmatson
