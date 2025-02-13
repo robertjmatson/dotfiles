@@ -17,7 +17,7 @@ case $distro in
 		sudo pacman -S nfs-utils samba net-tools
 		sudo pacman -S neovim lua51 luarocks ranger 
 		sudo pacman -S chezmoi
-		sudo pacman -S ttf-jetbrains-mono-nerd bash
+		sudo pacman -S ttf-jetbrains-mono-nerd
 
 		mkdir ~/.config/alacritty/themes
 		git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
