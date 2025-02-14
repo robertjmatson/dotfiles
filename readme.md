@@ -1,11 +1,6 @@
 Arch Setup Instructions
 
-sudo pacman -S chezmoi
-on Arch add Multilib
-sudo nano /etc/pacman.conf
-uncomment multilib
 sudo pacman -S lsb-release
-
 chezmoi init https://github.com/robertjmatson/dotfiles.git
 sudo pacman -S bash
 Run setup.sh
