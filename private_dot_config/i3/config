@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 exec xsetroot -solid black
-exec always nitrogen --restore
+exec nitrogen --restore
 include ~/.config/i3/i3-variables
 
 

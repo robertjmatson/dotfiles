@@ -53,3 +53,7 @@ case $session in
 		;;
 esac
 	chezmoi apply
+	cd ~
+	git glone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
