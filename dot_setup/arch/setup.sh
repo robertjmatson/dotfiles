@@ -6,17 +6,9 @@ echo "Configuring Arch"
 
 	sudo pacman -Syu
 	sudo pacman -S timeshift
-	sudo timeshift --create --comments "initial" --tags D
-	sudo pacman -S firefox steam discord nextcloud-client
-	sudo pacman -S alacritty tmux feh nitrogen picom dmenu
-	sudo pacmam -S git lazygit github-cli
-	sudo pacman -S samba keepassxc nfs-utils
-	sudo pacman -S nfs-utils samba net-tools
-	sudo pacman -S neovim lua51 luarocks ranger 
-	sudo pacman -S chezmoi
-	sudo pacman -S ttf-jetbrains-mono-nerd
-	chezmoi init https://github.com/robertjmatson/dotfiles.git
-
+	sudo timeshift --create --comments "initial"
+	#Begin Install
+	sudo pacman -S firefox steam discord nextcloud-client alacritty tmux feh nitrogen picom dmenu git lazygit github-cli samba keepassxc nfs-utils nfs-utils samba net-tools neovim lua51 luarocks ranger ttf-jetbrains-mono-nerd
 	mkdir ~/.config/alacritty/themes
 	git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 	git clone https://github.com/vivien/i3blocks-contrib.git ~/.config/i3blocks/scripts	
@@ -54,6 +46,6 @@ case $session in
 esac
 	chezmoi apply
 	cd ~
-	git glone https://aur.archlinux.org/yay.git
+	git clone https://aur.archlinux.org/yay.git
 	cd yay
 	makepkg -si
