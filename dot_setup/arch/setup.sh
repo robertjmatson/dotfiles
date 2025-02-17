@@ -8,15 +8,22 @@ echo "Configuring Arch"
 	sudo pacman -S timeshift
 	sudo timeshift --create --comments "initial"
 	#Begin Install
-	sudo pacman -S firefox steam discord nextcloud-client alacritty tmux feh nitrogen picom dmenu git lazygit github-cli samba keepassxc nfs-utils nfs-utils samba net-tools neovim lua51 luarocks ranger ttf-jetbrains-mono-nerd
-	mkdir ~/.config/alacritty/themes
-	git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
-	git clone https://github.com/vivien/i3blocks-contrib.git ~/.config/i3blocks/scripts	
-	
+	sudo pacman -S firefox neovim lua51 luarocks chezmoi tmux git lazygit github-cli samba keepassxc nextcloud-client discord steam
+
+	cd ~
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+	cd ~
 
 case $session in
 	"x11"*)
 		echo "x11 Detected"
+		sudo pacman -S alacritty feh nitrogen picom dmenu nfs-utils nfs-utils net-tools ranger ttf-jetbrains-mono-nerd
+		mkdir ~/.config/alacritty/themes
+		git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+		git clone https://github.com/vivien/i3blocks-contrib.git ~/.config/i3blocks/scripts	
+	
 		case $desk_env in
 			"i3"*)
 				source ./x11/i3wm.sh
@@ -31,6 +38,7 @@ case $session in
 		;;
 	"wayland"*)
 		echo "wayland Detected"
+		sudo pacman -S uwsm ttf-font-awesome hypershot 
 		case $desk_env in
 			"plasma"*)
 				source ./wayland/plasma.sh
@@ -45,7 +53,4 @@ case $session in
 		;;
 esac
 	chezmoi apply
-	cd ~
-	git clone https://aur.archlinux.org/yay.git
-	cd yay
-	makepkg -si
+	

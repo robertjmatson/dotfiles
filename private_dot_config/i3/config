@@ -8,8 +8,7 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-exec xsetroot -solid black
-exec nitrogen --restore
+
 include ~/.config/i3/i3-variables
 
 
@@ -29,8 +28,8 @@ exec --no-startup-id dex --autostart --environment i3
 
 
 #Customize monitor layout
-#exec_always bash ~/.config/i3/xrandr.sh
-#exec_always bash ~/.config/i3/monitorswitch.sh work
+exec_always bash ~/.config/i3/xrandr.sh
+exec_always bash ~/.config/i3/monitorswitch.sh work
 
 
 
@@ -167,12 +166,12 @@ for_window [window_role="alert"] floating enable
 # finds out, if available)
 
 bar {
-    status_command i3status
-    mode hide
-    height 30
-    colors {
-      background #242424
-    }
+        padding 0px 10px 0px 10px
+        tray_output primary
+        mode dock
+        hidden_state show
+        font pango:Terminus 13px
+        status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
 }
 
 #
