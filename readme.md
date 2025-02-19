@@ -2,6 +2,7 @@ Arch Setup Instructions
 
 sudo pacman -S lsb-release chezmoi bash
 chezmoi init https://github.com/robertjmatson/dotfiles.git
+git remote set-url origin http://gitea.robertjmatson.com/robert/dotfiles
 Run setup.sh
 
 
