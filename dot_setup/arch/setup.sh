@@ -1,8 +1,6 @@
 #!bin/bash
 echo "Configuring Arch"
 	sudo cp ~/.config/pacman.conf /etc/pacman.conf	
-	sudo systemctl start bluetooth.service
-	sudo systemctl enable bluetooth.service
 
 	sudo pacman -Syu
 	sudo pacman -S timeshift
@@ -41,7 +39,10 @@ case $session in
 		sudo pacman -S uwsm ttf-font-awesome man-db pipewire wireplumber xdg-desktop-portal-hyprland qt5-wayland qt6-wayland 
 		yay -S hyprshot pwvucontrol hyprlock hypridle hyprsysteminfo hyprpolkitagent hyprutils hyprland-qtutils hyprpaper
 		yay -S bluez-utils pipewire-pulse ttf-jetbrains-mono-nerd python	
-		yay -S bluetui 
+		yay -S bluetui blueman
+		yay -S gnome-keyring	
+		sudo systemctl start bluetooth.service
+		sudo systemctl enable bluetooth.service
 		systemctl enable --user pipewire wireplumber
 		systemctl --user enable --now hyprpolkitagent.service
 		systemctl --user enable --now hyprpaper.service
