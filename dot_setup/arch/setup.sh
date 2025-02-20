@@ -38,10 +38,19 @@ case $session in
 		;;
 	"wayland"*)
 		echo "wayland Detected"
-		sudo pacman -S uwsm ttf-font-awesome hypershot 
+		sudo pacman -S uwsm ttf-font-awesome man-db pipewire wireplumber xdg-desktop-portal-hyprland qt5-wayland qt6-wayland 
+		yay -S hyprshot pwvucontrol hyprlock hypridle hyprsysteminfo hyprpolkitagent hyprutils hyprland-qtutils hyprpaper
+		yay -S bluez-utils pipewire-pulse ttf-jetbrains-mono-nerd python	
+		yay -S bluetui 
+		systemctl enable --user pipewire wireplumber
+		systemctl --user enable --now hyprpolkitagent.service
+		systemctl --user enable --now hyprpaper.service
 		case $desk_env in
 			"plasma"*)
 				source ./wayland/plasma.sh
+				;;
+			"hyprland"*
+				sudo pacman -S waybar
 				;;
 			*)
 				echo "Desktop Enviornment Not Configured in Setup Script"
@@ -53,4 +62,4 @@ case $session in
 		;;
 esac
 	chezmoi apply
-	
+	git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
