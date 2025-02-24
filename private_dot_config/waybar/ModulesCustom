@@ -1,0 +1,33 @@
+// -*- mode: jsonc -*-
+{	
+  "custom/distro": {
+    "format": "",
+    "tooltip": false
+  },
+	"custom/nvidia": {
+	    "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% 🌡️ \\2°C/g'",
+	    "format": " 🖥️ {} ",
+	    "interval": 2
+	},
+    "cpu": {
+        "format": "  {usage}% ",
+        "tooltip": false
+	},
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input",
+		"critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": " {icon} {temperatureC}°C ",
+        "format-icons": ["", "", ""]
+    },
+	"group/processor": {
+		"orientation": "horizontal",
+		"modules": [
+			"cpu",
+			"temperature"
+		],
+	}
+}
+

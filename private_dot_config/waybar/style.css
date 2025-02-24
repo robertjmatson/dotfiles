@@ -1,0 +1,86 @@
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  min-height: 10px;
+  border-radius: 15px;
+  font-size: 13px;
+  border: none;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: @text;
+}
+
+tooltip {
+    background: #1E1D2F; 
+    border: 1px solid @darkgray;
+    border-radius: 0px;
+}
+tooltip label {
+    color: @text;
+}
+
+#custom-distro,
+#window,
+#workspaces,
+#idle_inhibitor,
+#memory,
+#clock.time,
+#clock.date,
+#bluetooth,
+#wireplumber,
+#keyboard-state,
+#mpd,
+#network,
+#tray,
+#processor,
+#custom-nvidia,
+#custom-power {
+    margin-top: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: #1E1D2F; 
+    border-bottom: 3px;
+    border-style: solid;
+    border-color: #89b4fa;
+    color: #89b4fa;
+    transition: 0.3s;
+}
+#clock.time {
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#workspaces button {
+    color: #89b4fa;
+    transition: 0.3s;
+}
+#workspaces button:hover {
+    background: transparent;
+    color: transparent;
+}
+#workspaces button.focused {}
+#workspaces button.active {
+    color: @white;
+    transition: all 0.3s ease;
+    animation: colored-gradient 10s ease infinite;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    color: @black;
+    transition: all 0.3s ease;
+}
+
+
+#custom-distro {
+    padding-right: 10px;
+    padding-left: 5px;
+}
+
+
