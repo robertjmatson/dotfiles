@@ -27,14 +27,12 @@ tooltip label {
 #idle_inhibitor,
 #memory,
 #clock.time,
-#clock.date,
-#bluetooth,
-#wireplumber,
 #keyboard-state,
 #mpd,
-#network,
 #tray,
 #processor,
+#system_g,
+#custom-pipewire,
 #custom-nvidia,
 #custom-power {
     margin-top: 10px;

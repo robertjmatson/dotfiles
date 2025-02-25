@@ -7,41 +7,30 @@
     "spacing": 4, // Gaps between modules (4px)
 	"gtk-layer-shell": true,
 
-
 	"include": [
 		"~/.config/waybar/Modules",
 		"~/.config/waybar/ModulesCustom",
 	],
 
 // === Positions ===
-
-    
 	"modules-left": [
         "custom/distro",
 		"hyprland/workspaces",  // workspaces
 		"hyprland/window"       // window title
 	],
-
 	"modules-center": [
-		"idle_inhibitor",
 		"group/processor",		
-		//"temperature",
-		//"cpu",
 		"custom/nvidia",
 		"memory",
-
-
-
 		"clock#time",
-		"clock#date",
-		"bluetooth",
-        "wireplumber",
+		"custom/pipewire",
+		"group/system_g",		
         "keyboard-state",
     ],
     "modules-right": [
-        "mpd",
-        "network",
+		"mpd",
+		"idle_inhibitor",
         "tray",
         "custom/power"
     ],
-}
+},
