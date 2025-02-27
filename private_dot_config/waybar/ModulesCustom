@@ -41,7 +41,6 @@
 		"orientation": "horizontal",
 		"modules": [ 
 			"network",
-			"bluetooth",
 		]
 	},
 }

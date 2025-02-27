@@ -62,5 +62,8 @@ case $session in
 		echo "Error neither x11 or Wayland Detected"
 		;;
 esac
+	yay -S python-pip python-virtualenv
+	yay -S python312
+
 	chezmoi apply
 	git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm

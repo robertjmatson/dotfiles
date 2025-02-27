@@ -4,12 +4,12 @@ return {
 		lazy = false,
 		keys = {
 			{
-				"<leader>f",
+				"<leader>fb",
 				function()
 					require("conform").format({ async = true, lsp_fallback = true })
 				end,
 				mode = "",
-				desc = "[F]ormat buffer",
+				desc = "[F]ormat [B]uffer",
 			},
 		},
 		opts = {
@@ -35,7 +35,12 @@ return {
 			},
 		},
 	},
-
+	{
+		"tzachar/cmp-ai",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
 	{ -- Autocompletion
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
@@ -142,6 +147,7 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "path" },
+					{ name = "cmp_ai" },
 				},
 			})
 		end,
