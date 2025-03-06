@@ -9,5 +9,3 @@ monitor=DP-3,5120x1440,0x1080,1.33
 monitor=DP-2, disabled
 monitor=HDMI-A-1, disabled
 
-#monitor=DP-2,1920x1080,2580x0,1
-#monitor=HDMI-A-1,1920x1080,320x0,1
