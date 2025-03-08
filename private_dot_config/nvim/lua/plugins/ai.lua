@@ -1,6 +1,3 @@
-if true then
-  return {}
-end
 return {
   {
     "olimorris/codecompanion.nvim",
@@ -110,6 +107,82 @@ return {
     keys = {
       { "<leader>cpc", vim.cmd.CodeCompanionChat, mode = { "n", "v" }, desc = "Open Chat" },
       { "<leader>cpa", vim.cmd.CodeCompanionAction, mode = { "n", "v" }, desc = "Open Actions" },
+    },
+  },
+  {
+    "milanglacier/minuet-ai.nvim",
+    enabled = true,
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+    },
+    keys = {
+      { "<leader>av", "<cmd>Minuet virtualtext toggle<CR>", desc = "Toggle virtual text" },
+    },
+    config = function()
+      require("minuet").setup({
+        context_window = 1000, --768 test works
+        request_timeout = 5,
+        provider = "openai_fim_compatible",
+        provider_options = {
+          openai_fim_compatible = {
+            model = "qwen2.5-coder",
+            end_point = "http://192.168.49.27:11434/v1/completions",
+            api_key = "TERM",
+            name = "qwen14",
+            stream = true,
+            template = {
+              prompt = function(context_before_cursor, context_after_cursor)
+                return "<|fim_prefix|>"
+                  .. context_before_cursor
+                  .. "<|fim_suffix|>"
+                  .. context_after_cursor
+                  .. "<|fim_middle|>"
+              end,
+              suffix = false,
+            },
+            optional = {
+              stop = { "\n\n" },
+              max_tokens = 256,
+            },
+          },
+        },
+        virtualtext = {
+          auto_trigger_ft = {},
+          keymap = {
+            accept = "<A-A>",
+            accept_line = "<A-a>",
+            -- Cycle to prev completion item, or manually invoke completion
+            prev = "<A-n>",
+            -- Cycle to next completion item, or manually invoke completion
+            next = "<A-p>",
+            dismiss = "<A-e>",
+          },
+        },
+      })
+    end,
+  },
+  {
+    "saghen/blink.cmp",
+    optional = true,
+    opts = {
+      keymap = {
+        ["<A-y>"] = {
+          function(cmp)
+            cmp.show({ providers = { "minuet" } })
+          end,
+        },
+      },
+      sources = {
+        -- if you want to use auto-complete
+        default = { "lsp", "path", "snippets", "buffer", "minuet" },
+        providers = {
+          minuet = {
+            name = "minuet",
+            module = "minuet.blink",
+            score_offset = 100,
+          },
+        },
+      },
     },
   },
 }
