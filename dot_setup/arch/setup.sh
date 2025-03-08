@@ -64,6 +64,6 @@ case $session in
 esac
 	yay -S python-pip python-virtualenv
 	yay -S python312
-
+  yay -S corectrl liquidctl docker nvidia-settings mangohud goverlay neofetch libreoffice-fresh
 	chezmoi apply
 	git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
